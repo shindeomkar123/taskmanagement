@@ -51,7 +51,8 @@ export class TaskListComponent implements OnInit {
 
   confirm(taskList:taskList): void {
     console.log('tasklist',taskList)
-    this.taskListItems?.splice(taskList.id,1);
+    console.log(this.taskListItems)
+    this.taskListItems=this.taskListItems?.filter(el=>el.id!==taskList.id);
     this.modalRef.hide();
   }
  
