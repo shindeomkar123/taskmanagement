@@ -32,7 +32,6 @@ export class TaskListComponent implements OnInit {
       this.taskListItems[dragItem.taskListId].taskItems = items;
       dragItem.taskListId = index;
       this.taskListItems[index].taskItems.push(dragItem);
-      console.log('TaskItems', this.taskListItems[dragItem.taskListId].taskItems);
     }
    
   }
@@ -50,8 +49,6 @@ export class TaskListComponent implements OnInit {
   }
 
   confirm(taskList:taskList): void {
-    console.log('tasklist',taskList)
-    console.log(this.taskListItems)
     this.taskListItems=this.taskListItems?.filter(el=>el.id!==taskList.id);
     this.modalRef.hide();
   }
